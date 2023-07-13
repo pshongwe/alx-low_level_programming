@@ -1,2 +1,2 @@
 #!/bin/bash
-cpp -P $CFILE -o c
+cpp -Wall -Werror -Wextra -pedantic -std=gnu89 -P $CFILE -o c
