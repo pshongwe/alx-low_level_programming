@@ -1,0 +1,9 @@
+#!/bin/bash
+
+file="6-size.c"  # Replace with the path to your input file
+
+while IFS= read -r line; do
+    trimmed_line="${line#"${line%%[![:space:]]*}"}"
+    echo "$trimmed_line"
+done < "$file"
+
