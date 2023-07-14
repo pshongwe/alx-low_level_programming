@@ -17,7 +17,7 @@ int main(void)
 	{
 		putchar(48 + i);
 	}
-	for (c = 'a'; c <= 'e'; c++)
+	for (c = 'a'; c <= 'f'; c++)
 	{
 		putchar(c);
 	}
