@@ -3,26 +3,38 @@
 
 /**
  * times_table - times table
- * @n: input number
+ *
  * Returns: void
  */
 void times_table(void)
 {
-	int i, j;
+	int i, j, result;
 
 	for (i = 0; i < 10; i++)
 	{
 		for (j = 0; j < 10; j++)
 		{
-			if (j != 9)
+			result = i * j;
+			if (j == 0)
 			{
-				printf("%d,  ", (i * j));
+				_putchar('0' + result);
+			}
+			else if (result < 10 && j != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar('0' + result);
 			}
 			else
 			{
-				printf("%d\n", (i * j));
+				_putchar(',');
+				_putchar(' ');
+				_putchar('0' + (result / 10));
+				_putchar('0' + (result % 10));
 			}
 		}
+		_putchar('\n');
 	}
 }
 
