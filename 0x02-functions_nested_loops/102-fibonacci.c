@@ -13,20 +13,17 @@ int main(void)
 	long result = 0;
 
 	printf("%lu, %lu", a, b);
-	for (i = 3; i < 50; i++)
+	for (i = 2; i < 50; i++)
 	{
 		result = a + b;
-		if ( i != 49)
+		if (i != 50)
 		{
 			printf(", %lu", result);
-		}
-		else
-		{
-			printf("%lu\n", result);
 		}
 		a = b;
 		b = result;
 	}
+	printf("\n");
 	return (0);
 }
 
