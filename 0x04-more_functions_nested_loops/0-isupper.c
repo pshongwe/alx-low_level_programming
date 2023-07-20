@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _isupper - check if upper case
  * @c: input char
