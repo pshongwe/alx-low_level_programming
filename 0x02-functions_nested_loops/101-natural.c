@@ -3,9 +3,9 @@
 /**
  * main - entry point
  *
- * Returns: void
+ * Returns: Always 0 (Success)
  */
-void main(void)
+int main(void)
 {
 	int i;
 	int result = 0;
@@ -18,5 +18,6 @@ void main(void)
 		}
 	}
 	printf("%d\n", result);
+	return (0);
 }
 
