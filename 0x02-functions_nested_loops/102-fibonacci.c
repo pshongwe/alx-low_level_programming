@@ -15,10 +15,16 @@ int main(void)
 	for (i = 3; i < 50; i++)
 	{
 		result = a + b;
-		printf(", %lld", result);
+		if ( i != 49)
+		{
+			printf(", %lld", result);
+		}
+		else
+		{
+			printf("%lld\n", result);
+		}
 		a = b;
 		b = result;
 	}
-	printf("\n");
 }
 
