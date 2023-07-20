@@ -3,9 +3,9 @@
 /**
  * main - entry point
  *
- * Returns: void
+ * Returns: Always 0 (Success)
  */
-void main(void)
+int main(void)
 {
 	int i;
 	unsigned long long int a = 1;
