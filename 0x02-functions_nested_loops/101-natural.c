@@ -17,6 +17,6 @@ void main(void)
 			result += i;
 		}
 	}
-	printf("%d\n", result); 
+	printf("%d\n", result);
 }
 
