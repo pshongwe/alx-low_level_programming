@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_diagonal - print \ followed by $ based on input n
+ * print_diagonal - print diagonal based on input n
  * @n: int
  * Return: void
  */
@@ -25,6 +25,5 @@ void print_diagonal(int n)
 			count++;
 			n--;
 		}
-		_putchar('\n');
 	}
 }
