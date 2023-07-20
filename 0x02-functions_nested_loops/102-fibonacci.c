@@ -15,9 +15,10 @@ void main(void)
 	for (i = 3; i < 50; i++)
 	{
 		result = a + b;
+		printf(", %lld", result);
 		a = b;
 		b = result;
 	}
-	printf("%lld\n", result);
+	printf("\n");
 }
 
