@@ -2,7 +2,7 @@
  * _strcat - concatenate strings
  * @dest: string to append to
  * @src: string to append
- *
+ * Return: result string
  */
 char *_strcat(char *dest, char *src)
 {
