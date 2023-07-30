@@ -1,7 +1,7 @@
 /**
- * _strncat - concatenate by n bytes
- * @dest: string to append to
- * @src: string to append
+ * _strncat - copy n bytes
+ * @dest: string to copy to
+ * @src: string to copy
  * @n: number of bytes
  * Return: resultant string
  */
@@ -9,10 +9,6 @@ char *_strncat(char *dest, char *src, int n)
 {
 	char *dest_start = dest;
 
-	while (*dest != '\0')
-	{
-		dest++;
-	}
 	while (*src != '\0' && n > 0)
 	{
 		*dest = *src;
@@ -20,7 +16,12 @@ char *_strncat(char *dest, char *src, int n)
 		src++;
 		n--;
 	}
-	*dest = '\0';
+	while (n > 0)
+	{
+		*dest = '\0';
+		dest++;
+		n--;
+	}
 	return (dest_start);
 }
 
