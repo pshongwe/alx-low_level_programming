@@ -10,10 +10,11 @@ char *rot13(char *str)
 	char *found;
 	char *input;
 	char *output;
+	int i;
 
 	input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		found = strchr(input, str[i]);
 		if (found)
