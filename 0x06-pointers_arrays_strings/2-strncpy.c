@@ -1,11 +1,11 @@
 /**
- * _strncat - copy n bytes
+ * _strncpy - copy n bytes
  * @dest: string to copy to
  * @src: string to copy
  * @n: number of bytes
  * Return: resultant string
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
 	char *dest_start = dest;
 
