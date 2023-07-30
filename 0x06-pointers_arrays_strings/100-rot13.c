@@ -1,3 +1,5 @@
+#include <string.h>
+
 /**
  * rot13 - encode string using rot13
  * @str: input string
