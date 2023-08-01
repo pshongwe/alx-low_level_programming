@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * _strchr - finds a char in a string
  * @s: string
