@@ -5,6 +5,10 @@
  */
 void print_number(int n)
 {
+	int divisor;
+	int temp;
+	int digit;
+
 	if ((n >= 0 && n <= 9) || (n < 0 && n >= -9))
 	{
 		if (n < 0)
@@ -21,24 +25,21 @@ void print_number(int n)
 			_putchar(45);
 			n = n * -1;
 		}
+		divisor = 1;
+		temp = n;
+		digit = -1;
+		while (temp > 9)
+		{
+			divisor *= 10;
+			temp /= 10;
+		}
 
-		if ((n >= 10 && n <= 99) || (n <= -10 && n >= -99))
+		while (divisor > 0)
 		{
-			_putchar((n / 10) + '0');
-			_putchar((n % 10) + '0');
-		}
-		else if ((n >= 100 && n <= 999) || (n <= -100 && n >= -999))
-		{
-			_putchar((n / 100) + '0');
-			_putchar(((n % 100) / 10) + '0');
-			_putchar((n % 10) + '0');
-		}
-		else if ((n >= 1000 && n <= 9999) || (n <= -1000 && n >= -9999))
-		{
-			_putchar((n / 1000) + '0');
-			_putchar(((n % 1000) / 100) + '0');
-			_putchar(((n % 100) / 10) + '0');
-			_putchar((n % 10) + '0');
+			digit = n / divisor;
+			_putchar(digit + '0');
+			n %= divisor;
+			divisor /= 10;
 		}
 	}
 }
