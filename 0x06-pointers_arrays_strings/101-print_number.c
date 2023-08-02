@@ -16,7 +16,7 @@ void print_number(int n)
 		_putchar('-');
 		n = n * -1;
 	}
-	divisor = 1;
+	divisor = n / n;
 	temp = n;
 	while (temp > 9)
 	{
