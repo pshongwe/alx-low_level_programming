@@ -1,57 +1,28 @@
 #include "main.h"
 
-int power(int base, int exponent);
-
-/**
- * power - raise number to power
- * @base: number to raise to power
- * @exponent: number of times to multiple number by itself by
- * Return: result of a number multiplying itself exponent times
- */
-int power(int base, int exponent) {
-    int result = 1;
-    while (exponent > 0) {
-        result *= base;
-        exponent--;
-    }
-    return result;
-}
-
 /**
  * _sqrt_helper - returns the natural square root of a number
- * @n: parameter n
- * @start: start range
- * @end: end range
- *
+ * @c: n is squared and compared against this ref number
+ * @base: base number to check
  * Return: square root of a number
  */
-int _sqrt_helper(int n, int start, int end)
+int _sqrt_helper(int c, int base)
 {
-int mid, square;
-
-if (start > end)
-return (end);
-
-mid = start + (end - start) / 2;
-square = power(mid, 2);
-
-if (square == n)
-return (mid);
-else if (square > n)
-return (_sqrt_helper(n, start, mid - 1));
-else
-return (_sqrt_helper(n, mid + 1, end));
+if (c * c == base)
+return (c);
+if (c * c > base)
+return (-1);
+return (_sqrt_helper(c + 1, base));
 }
 
 /**
  * _sqrt_recursion - calculate the square root of a number
- * @n: number
- *
+ * @n: number to find square root
  * Return: square root of n
  */
 int _sqrt_recursion(int n)
 {
 if (n < 0)
 return (-1);
-return (_sqrt_helper(n, 0, n));
+return (_sqrt_helper(1, n));
 }
