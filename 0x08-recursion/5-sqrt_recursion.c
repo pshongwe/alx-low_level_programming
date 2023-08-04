@@ -1,5 +1,22 @@
 #include "main.h"
 
+int power(int base, int exponent);
+
+/**
+ * power - raise number to power
+ * @base: number to raise to power
+ * @exponent: number of times to multiple number by itself by
+ * Return: result of a number multiplying itself exponent times
+ */
+int power(int base, int exponent) {
+    int result = 1;
+    while (exponent > 0) {
+        result *= base;
+        exponent--;
+    }
+    return result;
+}
+
 /**
  * _sqrt_helper - returns the natural square root of a number
  * @n: parameter n
@@ -16,7 +33,7 @@ if (start > end)
 return (end);
 
 mid = start + (end - start) / 2;
-square = mid * (mid);
+square = power(mid, 2);
 
 if (square == n)
 return (mid);
