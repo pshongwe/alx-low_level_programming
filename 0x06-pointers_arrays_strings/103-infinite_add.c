@@ -8,7 +8,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int len1 = 0, len2 = 0, carry = 0, sum, i = 0;
+int j, k, len1 = 0, len2 = 0, carry = 0, sum, i = 0;
 while (n1[len1])
 len1++;
 while (n2[len2])
@@ -26,7 +26,7 @@ r[i] = (sum % 10) + '0';
 if (i >= size_r)
 return (0);
 r[i] = '\0';
-for (int j = 0, k = i - 1; j < k; j++, k--)
+for (j = 0, k = i - 1; j < k; j++, k--)
 {
 char tmp = r[j];
 r[j] = r[k];
