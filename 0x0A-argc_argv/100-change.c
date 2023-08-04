@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - entry point
+ * @argc: length of array
+ * @argv: some array of arguments
+ * Return: nothing
+ */
 int main(int argc, char *argv[])
 {
 int i, cents, coins[5], num_coins, count;
