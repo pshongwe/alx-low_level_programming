@@ -15,7 +15,7 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 	{
-		fprintf(stderr, NULL);
+		fprintf(stderr, "\n");
 		return (NULL);
 	}
 	n = strlen(str);
