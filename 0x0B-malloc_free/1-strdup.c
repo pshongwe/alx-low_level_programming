@@ -15,7 +15,7 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 	{
-		fprintf(stderr, "\n");
+		printf("failed to allocate memory");
 		return (NULL);
 	}
 	n = strlen(str) + 1;
