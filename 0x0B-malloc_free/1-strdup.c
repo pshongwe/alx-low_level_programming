@@ -14,7 +14,7 @@ char *_strdup(char *str)
 	unsigned int n;
 
 	n = strlen(str);
-	charArray = malloc(n * sizeof(char));
+	charArray = malloc((n * sizeof(char)) + 1);
 	if (charArray == NULL)
 	{
 		fprintf(stderr, "Memory allocation failed.\n");
