@@ -18,8 +18,8 @@ char *_strdup(char *str)
 		fprintf(stderr, "\n");
 		return (NULL);
 	}
-	n = strlen(str);
-	charArray = malloc((n * sizeof(char)) + 1);
+	n = strlen(str) + 1;
+	charArray = malloc(n * sizeof(char));
 	if (charArray == NULL)
 	{
 		fprintf(stderr, "Memory allocation failed.\n");
