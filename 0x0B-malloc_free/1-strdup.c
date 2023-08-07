@@ -9,7 +9,7 @@
  */
 char *_strdup(char *str)
 {
-	char *charArray;
+	char *copy;
 	unsigned int i;
 	unsigned int n;
 
@@ -19,8 +19,8 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	n = strlen(str) + 1;
-	charArray = malloc(n * sizeof(char));
-	if (charArray == NULL)
+	copy = malloc(n * sizeof(char));
+	if (copy == NULL)
 	{
 		fprintf(stderr, "Memory allocation failed.\n");
 		exit(EXIT_FAILURE);
@@ -28,9 +28,9 @@ char *_strdup(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		charArray[i] = str[i];
+		copy[i] = str[i];
 		i++;
 	}
-	charArray[i] = '\0';
-	return (charArray);
+	copy[i] = '\0';
+	return (copy);
 }
