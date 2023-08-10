@@ -87,7 +87,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (result == NULL)
 	{
-		exit(EXIT_FAILURE);
+		return (NULL);
 	}
 	_strncpy(result, s1, len1);
 	_strncat(result, s2, final_len - len1);
