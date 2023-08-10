@@ -1,6 +1,34 @@
 #include <stdlib.h>
 #include <string.h>
 
+char *_strncat(char *dest, char *src, int n);
+
+/**
+ * _strncat - concatenate up to n bytes
+ * @dest: string to append to
+ * @src: string to append
+ * @n: number of bytes
+ * Return: resultant string
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	char *dest_start = dest;
+
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	while (*src != '\0' && n > 0)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		n--;
+	}
+	*dest = '\0';
+return (dest_start);
+}
+
 /**
  * string_nconcat - concatenates two strings
  * @s1: 1st string
@@ -21,7 +49,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		exit(EXIT_FAILURE);
 	}
 	strncpy(result, s1, len1);
-	strncat(result, s2, final_len - len1);
+	_strncat(result, s2, final_len - len1);
 	result[final_len] = '\0';
 	return (result);
 }
