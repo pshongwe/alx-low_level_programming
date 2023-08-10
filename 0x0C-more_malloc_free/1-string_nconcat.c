@@ -91,6 +91,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	_strncpy(result, s1, len1);
 	_strncat(result, s2, final_len - len1);
+	if (result == "")
+		return (NULL);
 	result[final_len] = '\0';
 	return (result);
 }
