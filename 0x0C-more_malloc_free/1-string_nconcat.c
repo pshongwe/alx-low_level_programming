@@ -1,7 +1,5 @@
 #include <stdlib.h>
 
-char *_strncat(char *dest, char *src, int n);
-char *_strncpy(char *dest, char *src, int n);
 int _strlen(char *s);
 
 /**
@@ -18,59 +16,6 @@ return (0);
 }
 
 /**
- * _strncpy - copy n bytes
- * @dest: string to copy to
- * @src: string to copy
- * @n: number of bytes
- * Return: resultant string
- */
-char *_strncpy(char *dest, char *src, int n)
-{
-	char *dest_start = dest;
-
-	while (*src != '\0' && n > 0)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-		n--;
-	}
-	while (n > 0)
-	{
-		*dest = '\0';
-		dest++;
-		n--;
-	}
-	return (dest_start);
-}
-
-/**
- * _strncat - concatenate up to n bytes
- * @dest: string to append to
- * @src: string to append
- * @n: number of bytes
- * Return: resultant string
- */
-char *_strncat(char *dest, char *src, int n)
-{
-	char *dest_start = dest;
-
-	while (*dest != '\0')
-	{
-		dest++;
-	}
-	while (*src != '\0' && n > 0)
-	{
-		*dest = *src;
-		dest++;
-		src++;
-		n--;
-	}
-	*dest = '\0';
-return (dest_start);
-}
-
-/**
  * string_nconcat - concatenates two strings
  * @s1: 1st string
  * @s2: 2nd string
@@ -80,19 +25,30 @@ return (dest_start);
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int len1 = _strlen(s1);
-	unsigned int len2 = _strlen(s2);
-	unsigned int final_len = len1 + ((n >= len2) ? len2 : n);
-	char *result = malloc(final_len + 1);
+char *concatenated;
+unsigned int len1, len2, i, j;
 
-	if (result == NULL)
-	{
-		return (NULL);
-	}
-	_strncpy(result, s1, len1);
-	_strncat(result, s2, final_len - len1);
-	if (!result)
-		return (NULL);
-	result[final_len] = '\0';
-	return (result);
+if (s1 == NULL)
+s1 = "";
+if (s2 == NULL)
+s2 = "";
+
+len1 = _strlen(s1);
+len2 = _strlen(s2);
+
+if (n >= len2)
+n = len2;
+
+concatenated = malloc(len1 + n + 1);
+if (concatenated == NULL)
+return (NULL);
+
+for (i = 0; i < len1; i++)
+concatenated[i] = s1[i];
+
+for (j = 0; j < n; j++, i++)
+concatenated[i] = s2[j];
+
+concatenated[i] = '\0';
+return (concatenated);
 }
