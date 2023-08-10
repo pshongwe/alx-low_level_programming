@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <unistd.h>
 
 int _is_digit(char *s);
 void print_number(int num);
 int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 
 /**
  * _strlen - returns the lenght of a string
@@ -48,6 +48,41 @@ _putchar(num % 10 + '0');
 }
 
 /**
+ * _strcpy - copies the string pointed to by src
+ * @dest: destination variable
+ * @src: source variable
+ * Return: the pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	dest[0] = '\0';
+
+	for (i = 0; src[i] != '\0'; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
+ * print_error - prints Error
+ * Return: nothing
+ */
+void print_error(void)
+{
+int i;
+char error[6];
+
+_strcpy(error, "Error");
+	for (i = 0; error[i] != '\0'; i++)
+	{
+		_putchar('0' + error[i]);
+	}
+	_putchar('\n');
+}
+
+/**
  * main - Entry point of the program
  * @argc: Argument count
  * @argv: Argument vector
@@ -61,8 +96,8 @@ char *num1, *num2;
 
 if (argc != 3 || !_is_digit(argv[1]) || !_is_digit(argv[2]))
 {
-write(2, "Error\n", 6);
-return (98);
+print_error();
+	return (98);
 }
 
 num1 = argv[1];
@@ -74,7 +109,7 @@ result = malloc(total_len *sizeof(int));
 
 if (!result)
 {
-write(2, "Error\n", 6);
+	print_error();
 return (98);
 }
 
