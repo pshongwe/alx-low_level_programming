@@ -2,35 +2,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <unistd.h>
 
-int _isdigit(char *s);
+int _is_digit(char *s);
+void print_number(int num);
 int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
-	
+
 /**
- * _strcpy - copies the string pointed to by src
- * @dest: destination variable
- * @src: source variable
- * Return: the pointer to dest
+ * _strlen - returns the lenght of a string
+ * @s: string parameter
+ *
+ * Return: length of the string s
  */
-char *_strcpy(char *dest, char *src)
+int _strlen(char *s)
 {
-	int i;
-
-	dest[0] = '\0';
-
-	for (i = 0; src[i] != '\0'; i++)
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+if (*s != '\0')
+return (1 + _strlen(s + 1));
+return (0);
 }
-
 /**
- * _isdigit - checks if a string is composed of digits
- * @s: string to check
- * Return: 1 if composed of digits, 0 otherwise
+ * _is_digit - checks if a string contains only digits
+ * @s: input string
+ * Return: 1 if all characters are digits, 0 otherwise
  */
-int _isdigit(char *s)
+int _is_digit(char *s)
 {
 while (*s)
 {
@@ -42,65 +37,48 @@ return (1);
 }
 
 /**
- * _strlen - calculates the length of a string
- * @s: string
- * Return: length of the string
+ * print_number - prints a number using putchar
+ * @num: number to print
  */
-int _strlen(char *s)
+void print_number(int num)
 {
-int len = 0;
-while (*s)
-{
-len++;
-s++;
-}
-return (len);
+if (num / 10)
+print_number(num / 10);
+_putchar(num % 10 + '0');
 }
 
 /**
- * main - entry point
- * @argc: number of arguments
- * @argv: array of arguments
+ * main - Entry point of the program
+ * @argc: Argument count
+ * @argv: Argument vector
  * Return: 0 on success, 98 on error
  */
 int main(int argc, char *argv[])
 {
-char *num1;
-char *num2;
-char error[6];
-int len1;
-int len2;
-int result_len;
+int i, j, product, len1, len2, total_len, non_zero_index;
 int *result;
-int i, j, product, pos1, pos2, sum, start;
+char *num1, *num2;
+
+if (argc != 3 || !_is_digit(argv[1]) || !_is_digit(argv[2]))
+{
+write(2, "Error\n", 6);
+return (98);
+}
 
 num1 = argv[1];
 num2 = argv[2];
 len1 = _strlen(num1);
 len2 = _strlen(num2);
-result_len = len1 + len2;
-result = malloc(result_len *sizeof(int));
-_strcpy(error, "Error");
-if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
+total_len = len1 + len2;
+result = malloc(total_len *sizeof(int));
+
+if (!result)
 {
-for (i = 0; error[i] != '\0'; i++)
-{
-_putchar('0' + error[i]);
-}
-_putchar('\n');
-	return (98);
-}
-if (result == NULL)
-{
-for (i = 0; error[i] != '\0'; i++)
-{
-	_putchar('0' + error[i]);
-}
-_putchar('\n');
+write(2, "Error\n", 6);
 return (98);
 }
 
-for (i = 0; i < result_len; i++)
+for (i = 0; i < total_len; i++)
 result[i] = 0;
 
 for (i = len1 - 1; i >= 0; i--)
@@ -108,29 +86,24 @@ for (i = len1 - 1; i >= 0; i--)
 for (j = len2 - 1; j >= 0; j--)
 {
 product = (num1[i] - '0') * (num2[j] - '0');
-pos1 = i + j;
-pos2 = i + j + 1;
-sum = product + result[pos2];
-result[pos1] += sum / 10;
-result[pos2] = sum % 10;
-}
-}
-
-start = 0;
-while (start < result_len && result[start] == 0)
-start++;
-
-if (start == result_len)
+result[i + j + 1] += product;
+if (result[i + j + 1] > 9)
 {
+result[i + j] += result[i + j + 1] / 10;
+result[i + j + 1] %= 10;
+}
+}
+}
+
+non_zero_index = 0;
+while (non_zero_index < total_len && result[non_zero_index] == 0)
+non_zero_index++;
+
+if (non_zero_index == total_len)
 _putchar('0');
+for (; non_zero_index < total_len; non_zero_index++)
+_putchar(result[non_zero_index] + '0');
 _putchar('\n');
-}
-else
-{
-for (; start < result_len; start++)
-_putchar('0' + result[start]);
-_putchar('\n');
-}
 
 free(result);
 return (0);
