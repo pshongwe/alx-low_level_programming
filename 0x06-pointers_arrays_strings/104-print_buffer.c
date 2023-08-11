@@ -10,12 +10,12 @@
 void print_hexadecimal_with_padding(unsigned int value)
 {
 	int padding;
-	int shift; 
+	int shift;
 	int i;
 	char digit;
 
-	shift = (padding - 1) * 4;
 	padding = 8;
+	shift = (padding - 1) * 4;
 	for (i = 0; i < padding; i++)
 	{
 		digit = (value >> shift) & 0xF;
@@ -53,6 +53,7 @@ void print_hexadecimal_with_padding(unsigned int value)
 void print_buffer(char *b, int size)
 {
 	int i, j;
+	
 	if (size <= 0)
 	{
 		_putchar('\n');
@@ -77,7 +78,7 @@ void print_buffer(char *b, int size)
 				if (isprint(b[i + j]))
 					print_hexadecimal_with_padding(b[i + j]);
 				else
-					_putchar('.';
+					_putchar('.');
 			}
 			else
 			{
