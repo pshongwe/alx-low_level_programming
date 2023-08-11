@@ -5,18 +5,18 @@
  * @n: number to print
  * Return: nothing
  */
-void print_number(int n)
+void print_number(unsigned int n)
 {
-	int divisor;
-	int temp;
-	int digit;
+	unsigned int divisor;
+	unsigned int temp;
+	unsigned int digit;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n = n * -1;
 	}
-	divisor = n / n;
+	divisor = 1;
 	temp = n;
 	while (temp > 9)
 	{
