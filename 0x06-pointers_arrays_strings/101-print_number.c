@@ -5,10 +5,10 @@
  * @n: number to print
  * Return: nothing
  */
-void print_number(unsigned int n)
+void print_number(int n)
 {
 	unsigned int divisor;
-	unsigned int temp;
+	int temp;
 	unsigned int digit;
 
 	if (n < 0)
@@ -26,7 +26,7 @@ void print_number(unsigned int n)
 
 	while (divisor > 0)
 	{
-		digit = n / divisor;
+		digit = ((unsigned int) n) / divisor;
 		_putchar(digit + '0');
 		n %= divisor;
 		divisor /= 10;
