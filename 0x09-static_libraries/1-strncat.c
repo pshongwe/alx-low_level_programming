@@ -6,8 +6,9 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	char *dest_start = dest;
+	char *dest_start;
 
+	dest_start = dest;
 	while (*dest != '\0')
 	{
 		dest++;
