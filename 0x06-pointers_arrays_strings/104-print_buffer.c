@@ -23,7 +23,7 @@ else
 printf("%02x", b[i * 10 + j]);
 
 if (j % 2 == 1)
-putchar(' ');
+_putchar(' ');
 }
 
 for (j = 0; j < 10; j++)
@@ -31,13 +31,13 @@ for (j = 0; j < 10; j++)
 if (j + i * 10 >= size)
 break;
 if (b[i * 10 + j] >= 32 && b[i * 10 + j] <= 126)
-putchar(b[i * 10 + j]);
+_putchar(b[i * 10 + j]);
 else
-putchar('.');
+_putchar('.');
 }
 
-putchar('\n');
+_putchar('\n');
 }
 if (size <= 0)
-putchar('\n');
+_putchar('\n');
 }
