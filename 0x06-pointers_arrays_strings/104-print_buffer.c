@@ -42,7 +42,8 @@ _putchar('\n');
 }
 
 /**
-* print_hex_address - Prints the hexadecimal representation of memory addresses.
+* print_hex_address - Prints the hexadecimal
+representation of memory addresses.
 * @address: The memory address to print.
 */
 void print_hex_address(unsigned int address)
