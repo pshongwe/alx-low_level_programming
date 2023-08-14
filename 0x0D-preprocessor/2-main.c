@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void _putchar(char c);
+
 /**
  * main - entry point
  * Return: Always 0 (Success)
