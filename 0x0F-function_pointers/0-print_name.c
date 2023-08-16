@@ -26,4 +26,5 @@ void print_with_putchar(char *str)
 		_putchar(*str);
 		str++;
 	}
+	_putchar('\n');
 }
