@@ -10,21 +10,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
+	if (!name || !f)
+		return;
 	f(name);
-}
-
-/**
- * print_with_putchar - Prints a string character by
- * character using putchar.
- *
- * @str: The string to be printed.
- */
-void print_with_putchar(char *str)
-{
-	while (*str != '\0')
-	{
-		_putchar(*str);
-		str++;
-	}
-	_putchar('\n');
 }
