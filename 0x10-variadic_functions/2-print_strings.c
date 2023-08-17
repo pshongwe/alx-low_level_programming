@@ -18,7 +18,15 @@ va_start(args, n);
 
 for (i = 0; i < n; i++)
 {
-str = va_arg(args, const char *);
+	if (str != NULL)
+	{
+		printf("%s", str);
+	}
+	else
+	{
+		printf("(nil)");
+	}
+	str = va_arg(args, const char *);
 
 while (*str)
 {
