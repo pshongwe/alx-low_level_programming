@@ -22,21 +22,21 @@ str = va_arg(args, const char *);
 
 while (*str)
 {
-putchar(*str);
-str++;
+	printf("%c", *str);
+	str++;
 }
 
 if (i < n - 1 && separator != NULL)
 {
-while (*separator)
-{
-putchar(*separator);
-separator++;
-}
+	while (*separator)
+	{
+		printf("%c", *separator);
+		separator++;
+	}
 }
 }
 
 va_end(args);
 
-putchar('\n');
+printf("\n");
 }
