@@ -18,19 +18,19 @@ va_start(args, n);
 
 for (i = 0; i < n; i++)
 {
-	if (str != NULL)
-	{
-		printf("%s", str);
-	}
-	else
-	{
-		printf("(nil)");
-	}
 	str = va_arg(args, const char *);
 
 while (*str)
 {
+	if (str != NULL)
+	{
 	printf("%c", *str);
+	}
+	else
+	{
+	printf("(nil)");
+	break;
+	}
 	str++;
 }
 
@@ -38,6 +38,7 @@ if (i < n - 1 && separator != NULL)
 {
 	while (*separator)
 	{
+		if (separator != NULL)
 		printf("%c", *separator);
 		separator++;
 	}
