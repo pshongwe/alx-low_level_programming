@@ -21,9 +21,9 @@ str = va_arg(args, const char *);
 if (str != NULL)
 printf("%s", str);
 if (i < n - 1 && separator != NULL)
-{
 printf("%s", separator);
-}
+if (str == NULL)
+printf("(nil)");
 }
 
 va_end(args);
