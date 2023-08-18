@@ -11,11 +11,11 @@
 void print_all(const char * const format, ...)
 {
 va_list args;
-char *fmt;
+const char *fmt;
+
 va_start(args, format);
 
-fmt = f"{format}";
-for (; *fmt; fmt++)
+for (fmt = format; *fmt; fmt++)
 {
 if (*fmt == '%')
 {
