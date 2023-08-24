@@ -10,13 +10,13 @@ section .text
     extern printf
 
 main:
-    push rbp
+    sub rsp, 8  ; Align the stack
     mov rdi, format
     mov rsi, hello
-    call printf wrt ..plt  ; Use "call printf wrt ..plt" instead of "call printf"
+    call printf wrt ..plt
     mov rdi, format
     mov rsi, newline
-    call printf wrt ..plt  ; Use "call printf wrt ..plt" instead of "call printf"
-    pop rbp
+    call printf wrt ..plt
+    add rsp, 8  ; Restore the stack
     ret
 
