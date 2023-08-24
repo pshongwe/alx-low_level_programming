@@ -7,16 +7,16 @@
  */
 void free_list(list_t *head)
 {
-    list_t *current, *next_node;
+list_t *current, *next_node;
 
-    current = head;
+current = head;
 
-    while (current != NULL)
-    {
-        next_node = current->next; // Store the next node before freeing the current one
-        free(current->str); // Free the duplicated string
-        free(current); // Free the node itself
-        current = next_node; // Move to the next node
-    }
+while (current != NULL)
+{
+next_node = current->next; 
+free(current->str);
+free(current);
+current = next_node;
+}
 }
 
