@@ -43,5 +43,5 @@ while (temp->next != NULL)
 	temp = temp->next;
 temp->next = new_node;
 }
-return (new_node);
+return (&new_node);
 }
