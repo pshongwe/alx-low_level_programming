@@ -11,7 +11,7 @@ listint_t *current, *next_node;
 
 
 if (head == NULL)
-	return (NULL);
+	return;
 current = *head;
 
 while (current != NULL)
