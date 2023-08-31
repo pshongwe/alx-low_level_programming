@@ -20,7 +20,7 @@ return (0);
 current = *h;
 while (current != NULL)
 {
-difference = current - current->next
+difference = current - current->next;
 if (difference > 0)
 {
 temp = current->next;
