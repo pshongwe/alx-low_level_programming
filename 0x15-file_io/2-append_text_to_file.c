@@ -22,10 +22,9 @@ return (-1);
 while (text_content[text_len])
 text_len++;
 
-fd = open(filename, O_WRONLY | O_APPEND);
+fd = open(filename, O_WRONLY | O_APPEND, 0664);
 if (fd == -1)
 return (-1);
-
 bytes_written = write(fd, text_content, text_len);
 close(fd);
 
