@@ -17,7 +17,7 @@ int error_exit(int code, const char *arg, int fd);
  */
 int error_exit(int code, const char *arg, int fd)
 {
-switch(code)
+switch (code)
 {
 case 97:
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
