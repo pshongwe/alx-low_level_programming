@@ -10,7 +10,8 @@ void print_magic(Elf64_Ehdr *header)
 int i;
 
 printf("Magic:   ");
-for (i = 0; i < EI_NIDENT; i++) {
+for (i = 0; i < EI_NIDENT; i++)
+{
 printf("%02x", header->e_ident[i]);
 if (i < EI_NIDENT - 1)
 printf(" ");
@@ -22,7 +23,8 @@ printf("\n");
 void print_class(Elf64_Ehdr *header)
 {
 printf("Class:                             ");
-switch (header->e_ident[EI_CLASS]) {
+switch (header->e_ident[EI_CLASS])
+{
 case ELFCLASS32:
 printf("ELF32\n");
 break;
@@ -37,7 +39,8 @@ printf("<unknown>\n");
 void print_data(Elf64_Ehdr *header)
 {
 printf("Data:                              ");
-switch (header->e_ident[EI_DATA]) {
+switch (header->e_ident[EI_DATA])
+{
 case ELFDATA2LSB:
 printf("2's complement, little-endian\n");
 break;
@@ -57,7 +60,8 @@ printf("Version:                           %d (current)\n", header->e_ident[EI_V
 void print_os_abi(Elf64_Ehdr *header)
 {
 printf("OS/ABI:                            ");
-switch (header->e_ident[EI_OSABI]) {
+switch (header->e_ident[EI_OSABI])
+{
 case ELFOSABI_SYSV:
 printf("UNIX System V\n");
 break;
