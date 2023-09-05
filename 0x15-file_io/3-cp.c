@@ -6,15 +6,16 @@
 
 #define BUFSIZE 1024
 
-void error_exit(int code, const char *arg, int fd);
+int error_exit(int code, const char *arg, int fd);
 
 /**
  * error_exit - error handler
  * @code: code
  * @arg: char array
  * @fd: file descriptor
+ * Return: int
  */
-void error_exit(int code, const char *arg, int fd)
+int error_exit(int code, const char *arg, int fd)
 {
 switch(code)
 {
