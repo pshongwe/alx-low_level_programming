@@ -60,12 +60,13 @@ error_exit(99, argv[2], 0);
 
 while ((bytes_read = read(fd_from, buffer, BUFSIZE)) > 0)
 {
-if (bytes_read == -1)
-error_exit(98, argv[1], 0);
 bytes_written = write(fd_to, buffer, bytes_read);
 if (bytes_written == -1)
 error_exit(99, argv[2], 0);
 }
+
+if (bytes_read == -1)
+error_exit(98, argv[1], 0);
 
 if (close(fd_from) == -1)
 error_exit(100, NULL, fd_from);
