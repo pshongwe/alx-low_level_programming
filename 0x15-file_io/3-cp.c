@@ -69,13 +69,9 @@ error_exit(99, argv[2], 0);
 
 if (close(fd_from) == -1)
 error_exit(100, NULL, fd_from);
-else
-close(fd_from);
 
 if (close(fd_to) == -1)
 error_exit(100, NULL, fd_to);
-else
-close(fd_to);
 
 return (0);
 }
