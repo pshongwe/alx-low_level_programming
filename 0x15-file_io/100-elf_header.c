@@ -1,11 +1,20 @@
 #include "main.h"
 
+/**
+ * print_abi_version - Prints the ABI version from the ELF header.
+ * @header: A pointer to the ELF header structure.
+ */
 void print_abi_version(Elf64_Ehdr *header)
 {
 printf("ABI Version:                       %d\n",
 header->e_ident[EI_ABIVERSION]);
 }
 
+/**
+ * print_type - Prints the ELF file
+ * type from the header
+ * @header: A pointer to the ELF header structure
+ */
 void print_type(Elf64_Ehdr *header)
 {
 printf("Type:                              ");
@@ -31,11 +40,19 @@ printf("<unknown>\n");
 }
 }
 
+/**
+ * print_entry_point - Prints the entry point address from the ELF header.
+ * @header: A pointer to the ELF header structure.
+ */
 void print_entry_point(Elf64_Ehdr *header)
 {
 printf("Entry point address:               0x%lx\n", header->e_entry);
 }
 
+/**
+ * print_elf_header_info - Prints information from the ELF header.
+ * @header: A pointer to the ELF header structure.
+ */
 void print_elf_header_info(Elf64_Ehdr *header)
 {
 print_magic(header);
@@ -48,6 +65,12 @@ print_type(header);
 print_entry_point(header);
 }
 
+/**
+ * main - entry point
+ * @argc: number of args
+ * @argv: args
+ * Return: succes or error
+ */
 int main(int argc, char *argv[])
 {
 const char *elf_filename = argv[1];
