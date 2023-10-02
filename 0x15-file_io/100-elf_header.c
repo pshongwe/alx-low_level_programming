@@ -54,7 +54,8 @@ printf("<unknown>\n");
 
 void print_version(Elf64_Ehdr *header)
 {
-printf("Version:                           %d (current)\n", header->e_ident[EI_VERSION]);
+printf("Version:                           %d (current)\n",
+header->e_ident[EI_VERSION]);
 }
 
 void print_os_abi(Elf64_Ehdr *header)
