@@ -103,7 +103,8 @@ printf("<unknown>\n");
 
 void print_abi_version(Elf64_Ehdr *header)
 {
-printf("ABI Version:                       %d\n", header->e_ident[EI_ABIVERSION]);
+printf("ABI Version:                       %d\n",
+header->e_ident[EI_ABIVERSION]);
 }
 
 void print_type(Elf64_Ehdr *header)
