@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * print_magic - Prints the magic bytes from the ELF header.
+ * @header: A pointer to the ELF header structure.
+ */
 void print_magic(Elf64_Ehdr *header)
 {
 int i;
@@ -15,6 +19,10 @@ printf("\n");
 }
 }
 
+/**
+ * print_class - Prints the ELF file class from the ELF header.
+ * @header: A pointer to the ELF header structure.
+ */
 void print_class(Elf64_Ehdr *header)
 {
 printf("Class:                             ");
@@ -31,6 +39,10 @@ printf("<unknown>\n");
 }
 }
 
+/**
+ * print_data - Prints the data encoding (endianness) from the ELF header.
+ * @header: A pointer to the ELF header structure.
+ */
 void print_data(Elf64_Ehdr *header)
 {
 printf("Data:                              ");
@@ -47,12 +59,20 @@ printf("<unknown>\n");
 }
 }
 
+/**
+ * print_version - Prints the ELF file version from the ELF header.
+ * @header: A pointer to the ELF header structure.
+ */
 void print_version(Elf64_Ehdr *header)
 {
 printf("Version:                           %d (current)\n",
 header->e_ident[EI_VERSION]);
 }
 
+/**
+ * print_os_abi - Prints the operating system/ABI from the ELF header.
+ * @header: A pointer to the ELF header structure.
+ */
 void print_os_abi(Elf64_Ehdr *header)
 {
 printf("OS/ABI:                            ");
