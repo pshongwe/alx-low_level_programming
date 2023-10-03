@@ -1,6 +1,14 @@
 #ifndef EXTRA_H
 #define EXTRA_H
 
+/* headers */
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <elf.h>
+#include <string.h>
+
 void print_magic(Elf64_Ehdr *header);
 void print_class(Elf64_Ehdr *header);
 void print_data(Elf64_Ehdr *header);
