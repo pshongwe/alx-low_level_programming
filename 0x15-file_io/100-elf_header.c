@@ -1,4 +1,4 @@
-#include "main.h"
+#include "extra.h"
 
 /**
  * print_abi_version - Prints the ABI version from the ELF header.
