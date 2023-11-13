@@ -34,24 +34,18 @@ while (current != NULL)
 if (i == idx)
 {
 if (current->next == NULL)
-{
 	new_node = add_dnodeint_end(h, n);
-	return (new_node);
-}
-new_node = malloc(sizeof(dlistint_t));
-if (new_node != NULL)
+else if (new_node != NULL)
 {
-new_node->n = n;
 new_node->next = current->next;
 new_node->prev = current;
 current->next->prev = new_node;
 current->next = new_node;
-return (new_node);
 }
+break;
 }
 current = current->next;
 i++;
 }
-free(new_node);
-return (NULL);
+return (new_node);
 }
