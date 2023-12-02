@@ -156,6 +156,7 @@ printf("}\n");
  * with a key in a sorted hash table.
  * @ht: The sorted hash table you want to look into.
  * @key: The key you are looking for.
+ * Return: char value
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
