@@ -171,7 +171,7 @@ node = ht->array[index];
 while (node != NULL)
 {
 if (strcmp(node->key, key) == 0)
-return node->value;
+return (node->value);
 node = node->next;
 }
 
