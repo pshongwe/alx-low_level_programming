@@ -177,34 +177,9 @@ return (NULL);
 }
 for (i = 0; i < size; i++)
 ht->array[i] = NULL;
+
 ht->shead = NULL;
 ht->stail = NULL;
+
 return (ht);
 }
-
-new_node->next = ht->array[index];
-ht->array[index] = new_node;
-temp = ht->shead;
-prev_node = NULL;
-while (temp && strcmp(temp->key, key) < 0)
-{
-prev_node = temp;
-temp = temp->snext;
-}
-
-new_node->sprev = prev_node;
-new_node->snext = temp;
-
-if (prev_node)
-prev_node->snext = new_node;
-else
-ht->shead = new_node;
-
-if (temp)
-temp->sprev = new_node;
-else
-ht->stail = new_node;
-
-return (1);
-}
-
