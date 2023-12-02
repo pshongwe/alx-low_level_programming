@@ -3,6 +3,9 @@
 
 #include <stddef.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
  * struct hash_node_s - Node of a hash table.
  *
