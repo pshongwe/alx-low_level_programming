@@ -71,7 +71,10 @@ ht->stail = new_node;
 return (1);
 }
 
-
+/**
+ * shash_table_delete - Deletes a sorted hash table.
+ * @ht: The sorted hash table to be deleted.
+ */
 void shash_table_delete(shash_table_t *ht)
 {
 shash_node_t *node, *temp;
@@ -97,6 +100,11 @@ free(ht->array);
 free(ht);
 }
 
+/**
+ * shash_table_print_rev - Prints a sorted
+ * hash table in reverse order.
+ * @ht: The sorted hash table to print.
+ */
 void shash_table_print_rev(const shash_table_t *ht)
 {
 shash_node_t *node;
@@ -118,6 +126,10 @@ node = node->sprev;
 printf("}\n");
 }
 
+/**
+ * shash_table_print - Prints a sorted hash table.
+ * @ht: The sorted hash table to print.
+ */
 void shash_table_print(const shash_table_t *ht)
 {
 shash_node_t *node;
@@ -139,6 +151,12 @@ node = node->snext;
 printf("}\n");
 }
 
+/**
+ * shash_table_get - Retrieves a value associated
+ * with a key in a sorted hash table.
+ * @ht: The sorted hash table you want to look into.
+ * @key: The key you are looking for.
+ */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 shash_node_t *node;
@@ -159,6 +177,11 @@ node = node->next;
 return (NULL);
 }
 
+/**
+ * shash_table_create - Creates a sorted hash table.
+ * @size: The size of the array in the hash table.
+ * Return: A pointer to the newly created sorted hash table
+ */
 shash_table_t *shash_table_create(unsigned long int size)
 {
 shash_table_t *ht;
