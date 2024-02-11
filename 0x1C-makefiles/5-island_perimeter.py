@@ -3,6 +3,7 @@
 5-island_perimeter
 """
 
+
 def island_perimeter(grid):
     """Calculates the Island's Perimeter"""
     perimeter = 0
